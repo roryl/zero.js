@@ -19,8 +19,29 @@ Many javascript libraries break form and link funtionality in browsers by using 
 ####Javascript fatigue is real
 The churn in the javascript application ecosystem is absurd and does not support end users needs, or the needs of customers and developers trying to build web applications. Having to compeltely rebuild a web interface every few years or risk becoming obselete is not an appropriate lifecycle for most web applications. We believe that HTML & Native browser functionaltiy, with judicial javascript use, is more easily maintained long term and a proper separation of concerns. In cases where a completely javascript rendered solution is necessary, it is usually only for a subset of an application, and it is better to reserve that portion for javascript frameworks.
 
+####Forms and Links are the semantic web
+Zero.js relies on applications which uses form posts, redirects, and links to resources, to convey the meaning of the application.
+
+
 ##When NOT to use it
 Becasue zero.js is for server-side rendered applications, it provides nothing of value for completely javascript rendered applications. The vast majority of applications however, even many dyanmic applications, do not need to be javascript rendered and can be more maintainably built with server side rendering. Give Zero.js a try to see if it gives you the right user experience for your app. But if your app needs true full javascript rendering, don't use Zero.js.
+
+##Dependencies
+Zero.js requires jQuery and is tested with 2.2.4
+https://code.jquery.com/jquery-2.2.4.min.js
+
+##How it Works
+The primary thing to understand about Zero.js is it works just like full normal browser page requests and refreshes. Zero makes full requests to your server side resources just like normal form posts and links would. Zero.js inspects the full response, and injects changed fragments into the page, under certain circumstances (described in the features section below). This means that you do not need to encode special HTML fragments in the server response. Your server returns full HTML like a normal browser request, and you tell Zero what to replace.
+
+Zero also does not hide URL resources, unlike libraries which hide the URL and swap the body content and sometimes use push-state (Turbolinks, SmoothState.js, etc). When the URL changes by a link or post to a different URL then the current page, Zero.js will not intercept the call, and the browser will do a full reload to the new URL. Zero.js only intercepts calls where the URL resource is not changing.
+
+##Features
+###Page Fragment Swap
+
+###Auto Reloading Fragments
+
+###Auto Saving Forms
+
 
 
 
