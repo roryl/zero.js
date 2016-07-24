@@ -39,6 +39,40 @@ Zero also does not hide URL resources, unlike libraries which hide the URL and s
 ###Page Fragment Swap
 The primary feature of Zero.js to to swap sections on a page with the request of the server response.
 
+form-submit.html
+```
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Basic HTML Form</title>
+</head>
+<body>
+	<p id="form-message"></p>
+	<form zero-target="#form-message" action="/form-response.html" method="post">
+		<input type="hidden" name="goto" value="" />
+		<button>Submit</button>
+	</form>
+</body>
+</html>
+```
+
+form-response.html
+```
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Basic HTML Form</title>
+</head>
+<body>
+	<p id="form-message">You have submitted the form</p>
+	<form zero-target="#form-message" action="/form-response.html" method="post">
+		<input type="hidden" name="goto" value="" />
+		<button>Submit</button>
+	</form>
+</body>
+</html>
+```
+
 ###Auto Reloading Fragments
 
 ###Auto Saving Forms
