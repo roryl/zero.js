@@ -10,14 +10,14 @@ Use Zero.js for applications that are server-side routed and rendered. Zero.js a
 ###Zero.js Philosophies
 The following web app architecture philosophies underpin Zero.js. If you believe in these then Zero.js may work for you:
 
-###URLs are important
+####URLs are important
 Most modern javascript applications abuse and break URLs, either by ommiting the route information entirely, or not proprly handling them unless the user explicity clicked through to the route. We believe that URLs should be sharable, indexible, and convery meaning to the user experience.
 
-###Don't break browser features
+####Don't break browser features
 Many javascript libraries break form and link funtionality in browsers by using javascript links that do not route to any page, cannot be opened in new windows, and cannot be copied. Many libraries also break the browser history or rely on flaky push-state implementations. We believe that all currently used HTML 5 browsers have the functionality necessary to create rich client experiences without resorting to a complete javascript application.
 
-###Javascript fatigue is real
-The churn in the javascript application ecosystem is absurd and does not support end users needs, or the needs of customers and developers trying to build web applications. Having to compeltely rebuild a web interface every few years or risk becoming obselete is not an appropriate lifecycle for most web applications. We believe that HTML & Native browser functionaltiy, with judicial javascript use, is more easily maintained long term and a proper separation of concerns.
+####Javascript fatigue is real
+The churn in the javascript application ecosystem is absurd and does not support end users needs, or the needs of customers and developers trying to build web applications. Having to compeltely rebuild a web interface every few years or risk becoming obselete is not an appropriate lifecycle for most web applications. We believe that HTML & Native browser functionaltiy, with judicial javascript use, is more easily maintained long term and a proper separation of concerns. In cases where a completely javascript rendered solution is necessary, it is usually only for a subset of an application, and it is better to reserve that portion for javascript frameworks.
 
 ##When NOT to use it
 Becasue zero.js is for server-side rendered applications, it provides nothing of value for completely javascript rendered applications. The vast majority of applications however, even many dyanmic applications, do not need to be javascript rendered and can be more maintainably built with server side rendering. Give Zero.js a try to see if it gives you the right user experience for your app. But if your app needs true full javascript rendering, don't use Zero.js.
