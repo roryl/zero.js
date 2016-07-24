@@ -1,5 +1,4 @@
 # zero.js
-Zero.js - Instant Ajax Applications
 Using zero.js, build ajax rich, progressively enhanced web applications, using server side rendering and no additional javascript. Zero.js makes building web applications fun again!
 
 ##What Zero.js Does
