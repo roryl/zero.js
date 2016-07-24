@@ -49,7 +49,7 @@ In this method, resource updates are achieved by posting to the same URL resourc
 The primary feature of Zero.js to to swap sections on a page with the request of the server response.
 
 form-submit.html
-```
+```html
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -66,7 +66,7 @@ form-submit.html
 ```
 
 form-response.html
-```
+```html
 <html>
 <head>
 	<meta charset="UTF-8">
