@@ -33,7 +33,16 @@ https://code.jquery.com/jquery-2.2.4.min.js
 ##How it Works
 The primary thing to understand about Zero.js is it works just like full normal browser page requests and refreshes. Zero makes full requests to your server side resources just like normal form posts and links would. Zero.js inspects the full response, and injects changed fragments into the page, under certain circumstances (described in the features section below). This means that you do not need to encode special HTML fragments in the server response. Your server returns full HTML like a normal browser request, and you tell Zero what to replace.
 
-Zero also does not hide URL resources, unlike libraries which hide the URL and swap the body content and sometimes use push-state (Turbolinks, SmoothState.js, etc). When the URL changes by a link or post to a different URL then the current page, Zero.js will not intercept the call, and the browser will do a full reload to the new URL. Zero.js only intercepts calls where the URL resource is not changing. If the POST will result in a redirect back to a GET (Known as POST-REDIRECT-GET architecture), Zero.js provides a mechanism to define that the redirect will return to the current page, so that fragments can be swapped.
+Zero also does not hide URL resources, unlike libraries which hide the URL and swap the body content and sometimes use push-state (Turbolinks, SmoothState.js, etc). When the URL changes by a link or post to a different URL then the current page, Zero.js will not intercept the call, and the browser will do a full reload to the new URL. Zero.js only intercepts calls where the URL resource is not changing. If the POST will result in a redirect back to a GET (Known as POST-REDIRECT-GET architecture), Zero.js provides a mechanism to define that the redirect will return to the current page, so that the desired fragments can be swapped.
+
+###Server Side Routing Choices
+Zero.js assumes that your server side routing architecture is made of resource endpoints. Zero.js assumes that a URL is a definite resource and that subsequent requests (GETs) to that resource return a relatively similar representation. It assumes that updates are made to that resource with POSTs. Resource based web applications will typically implement themselves in one of these two ways, which are compatible with Zero.js:
+
+####POST-REDIRECT-GET
+In this method, resource updates are achieved with form POSTs to a resource endpoint, and then the browser is redirected using a GET back to the updated resource endpoint. The POST never returns any data. This is the more modern RESTful resource architecture. 
+
+####Self-Posting Forms
+In this method, resource updates are achieved by posting to the same URL resources that the user is currently on. The server returns a full HTML page with the changes.
 
 ##Features
 ###Page Fragment Swap
