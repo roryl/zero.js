@@ -33,10 +33,11 @@ https://code.jquery.com/jquery-2.2.4.min.js
 ##How it Works
 The primary thing to understand about Zero.js is it works just like full normal browser page requests and refreshes. Zero makes full requests to your server side resources just like normal form posts and links would. Zero.js inspects the full response, and injects changed fragments into the page, under certain circumstances (described in the features section below). This means that you do not need to encode special HTML fragments in the server response. Your server returns full HTML like a normal browser request, and you tell Zero what to replace.
 
-Zero also does not hide URL resources, unlike libraries which hide the URL and swap the body content and sometimes use push-state (Turbolinks, SmoothState.js, etc). When the URL changes by a link or post to a different URL then the current page, Zero.js will not intercept the call, and the browser will do a full reload to the new URL. Zero.js only intercepts calls where the URL resource is not changing.
+Zero also does not hide URL resources, unlike libraries which hide the URL and swap the body content and sometimes use push-state (Turbolinks, SmoothState.js, etc). When the URL changes by a link or post to a different URL then the current page, Zero.js will not intercept the call, and the browser will do a full reload to the new URL. Zero.js only intercepts calls where the URL resource is not changing. If the POST will result in a redirect back to a GET (Known as POST-REDIRECT-GET architecture), Zero.js provides a mechanism to define that the redirect will return to the current page, so that fragments can be swapped.
 
 ##Features
 ###Page Fragment Swap
+The primary feature of Zero.js to to swap sections on a page with the request of the server response.
 
 ###Auto Reloading Fragments
 
