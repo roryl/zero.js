@@ -40,7 +40,7 @@ Zero also does not hide URL resources, unlike libraries which hide the URL and s
 The primary feature of Zero.js to to swap sections on a page with the request of the server response.
 
 form-submit.html
-```
+```html
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -57,7 +57,7 @@ form-submit.html
 ```
 
 form-response.html
-```
+```html
 <html>
 <head>
 	<meta charset="UTF-8">
