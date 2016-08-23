@@ -78,9 +78,11 @@ $(document).ready(function() {
 						var formAction = form.attr('action');
 					}
 
+					formMethod = form.attr('method');
+
 		            $.ajax({
 		                url: formAction,
-		                type: 'POST',
+		                type: formMethod,
 		                data: formData,
 		                success: function(result) {
 		                    
@@ -185,7 +187,26 @@ $(document).ready(function() {
 				// console.log(input);
 				$(input).on("change", function(){
 					// console.log('change');
+					// formMethod = $(zeroForm).attr('method');
+					// if(formMethod.toLowerCase() == 'get'){
+					// 	$(zeroForm).submit( function() {
+
+					//         $.ajax({
+					//             url     : $(this).attr('action'),
+					//             type    : $(this).attr('method'),
+					//             data    : $(this).serialize(),
+					//             success : function( response ) {
+					//                         // alert( response );
+					//                       }
+					//         });
+
+					//         return false;
+					//     });
+					// } else {
+					// }
 					$(zeroForm).trigger("submit");
+					console.log($(zeroForm).attr('method')); 
+					
 				})
 
 			}
