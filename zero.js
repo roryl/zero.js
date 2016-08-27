@@ -19,8 +19,7 @@ $(document).ready(function() {
 
 	var zeroAjax = function(html){
 		var zeroForms = $(html).find('form[zero-target]');
-		$(zeroForms).off('submit');
-
+		$(zeroForms).off('submit');		
 		for(var i=0 ; i < zeroForms.length; i++){
 
 			var action = $(zeroForms[i]).attr('action');
@@ -91,9 +90,11 @@ $(document).ready(function() {
 		                    
 		                    // http://stackoverflow.com/questions/14423257/find-body-tag-in-an-ajax-html-response
 		                    if(target == 'body'){
+		                    	// alert();
 		                    	var targetHTML = result.substring(result.indexOf("<body>")+6,result.indexOf("</body>"));
 								targetPut = $('body');		                    
 		                    	targetPut.html(targetHTML);
+		                    	console.log('target body');		      
 		                    } else {
 		                    	// console.log(result);
 		                		var response = $('<html />').html(result);
@@ -106,8 +107,18 @@ $(document).ready(function() {
 		                    	}
 		                    	// console.log(targetPut);		                    
 		                    	targetPut.html(targetHTML.html());
+		                    	console.log('target id');	
+		                    	formButton.removeAttr('disabled');   
 		                    	
-		                    	formButton.removeAttr('disabled');                    	
+		                    	jQuery(document).ready(function() {											
+									setTimeout(function(){
+										console.log('add animate classes'); 										
+										jQuery('.zero-squeeze-in').addClass('zero-squeeze-in-on');
+										jQuery('.zero-squeeze-out').addClass('zero-squeeze-out-on');
+									}, 5);
+									
+								 });
+
 		                    }
 
 		                    icon.removeClass();
@@ -118,6 +129,9 @@ $(document).ready(function() {
 		                    zeroAuto($(document));
 		                    zeroOnChange($(document));
 		                    lastButtonClicked($(document));
+		                   jQuery(document).ready(function() {		
+								
+							 });
 		                    // console.log(targetHTML);
 		                }
 		            });
